@@ -1,0 +1,23 @@
+React is a JS library , But directly comptet with frame works such as Angular
+
+
+
+npm -> have the library for permanentally in your device
+npx -> only have the library in your device till you use it
+
+
+
+To Create Your First React App ->   npx create-react-app my-app
+
+Error Occured :-
+Solution :- npm install -g npm
+
+
+To enter a inner folder through terminal :- cd {folder name}/
+
+
+STATE :- the details about the component
+PROPS :- the details filled within the component by th user
+
+JSX returns only one single ellement
+    to return multiple ellements use JSX fragment(<> ...... </>)
