@@ -1,13 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Navbar from './Components/Navbar';
+import TextForm from './Components/TextForm';
+import About from './Components/About';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+const router = createBrowserRouter([
+  {
+    path: "/", 
+    element: <Navbar/>,
+    children:[
+         {
+             path: "/", 
+             element:<TextForm heading="Enter your text to Analyze"/>
+             
+         },
+         {
+             path: "/About",
+             element: <About/>
+         },
+    ]
+}
+
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
