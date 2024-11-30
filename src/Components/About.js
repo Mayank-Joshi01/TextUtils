@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function About() {
+export default function About(props) {
   return (
     <div className="container">
-      <h2>ABOUT US</h2>
+      <h2 style={{color: props.Mode==='Light'?"black":"white"}}>ABOUT US</h2>
     <div className="accordion" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header">

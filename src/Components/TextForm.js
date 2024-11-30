@@ -37,7 +37,7 @@ console.log("Speaking")
       
   return (
   <><div className="container">
-    <h3>{props.heading}</h3>
+    <h3 style={{color: props.Mode==='Light'?"black":"white"}}>{props.heading}</h3>
 <div className="mb-3 container p-0">
   <textarea className="form-control" placeholder='Ener Your Text Here' value={text} onChange={handelOnChange}  id="myBox" rows="8"></textarea>
 <button className='btn btn-primary my-3 mx-2' onClick={textToUppercase}>UpperCase</button>
@@ -50,7 +50,7 @@ console.log("Speaking")
 
 
 
-<div className="my-4">
+<div className="my-4" style={{color: props.Mode==='Light'?"black":"white"}}>
     <h3>Your Text Summary</h3>
     <p><b>Words : {text.split(" ").length}</b></p>
     <p><b>Characters : </b>{text.length}</p>
