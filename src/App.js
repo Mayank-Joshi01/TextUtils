@@ -1,26 +1,27 @@
-// import './App.css';
-// import Navbar from './Components/Navbar';
-// import TextForm from './Components/TextForm';
-// import About from './Components/About';
-// function App() {
-//   return (
-//     <>
-//     <Router>
-// <Navbar title="TextUtils" aboutText="About" />
-//      <Switch>
-//           <Route path="/about">
-//             <About />
-//           </Route>
-//           <Route path="/">
+import './App.css';
+import Navbar from './Components/Navbar';
+import TextForm from './Components/TextForm';
+import About from './Components/About';
+import {Route,Routes} from "react-router-dom";
+function App() {
+  return (
+    <> 
+<Navbar title="TextUtils" aboutText="About" />
 
-//           <div className="container my-3">
-// <TextForm heading="Enter your text to Analyze"/>
-// </div>
-//           </Route>
-//         </Switch>
-//         </Router>
-//     </>
-//   );
-// }
+     <Routes>
 
-// export default App;
+     <Route path="/about" element={<About/>}/>
+           
+
+          <Route path="/"element={ <TextForm heading="Enter your text to Analyze"/>}/>
+
+    
+
+          </Routes>
+        
+
+    </>
+  );
+}
+
+export default App;
