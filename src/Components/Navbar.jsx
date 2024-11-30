@@ -21,7 +21,6 @@ export default function Navbar(props){
           <ul className="dropdown-menu">
             <li><button className="dropdown-item" >Dark</button></li>
             <li><button className="dropdown-item" >Light</button></li>
-            <li><button className="dropdown-item" >Blue</button></li>
           </ul>
         </li>
       </ul>

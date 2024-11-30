@@ -1,29 +1,41 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import About from './Components/About';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import React,{useState} from 'react'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
 
+const [mode, Setmode] = useState("Light");
+
+const toggleMode = ()=>{
+  if (mode==="Light"){
+    Setmode("Dark");
+  }
+  else if(mode==="Dark"){
+    Setmode("Light");
+  }
+}
+
+
 const router = createBrowserRouter([
   {
     path: "/", 
-    element: <Navbar/>,
+    element: <Navbar Mode={mode}/>,
     children:[
          {
              path: "/", 
-             element:<TextForm heading="Enter your text to Analyze"/>
+             element:<TextForm heading="Enter your text to Analyze" Mode={mode}/>
              
          },
          {
              path: "/About",
-             element: <About/>
+             element: <About Mode={mode}/>
          },
     ]
 }

@@ -35,8 +35,6 @@ console.log("Speaking")
 
     }
       
-
-
   return (
   <>
     <h3>{props.heading}</h3>
@@ -56,7 +54,8 @@ console.log("Speaking")
     <h3>Your Text Summary</h3>
     <p><b>Words : {text.split(" ").length}</b></p>
     <p><b>Characters : </b>{text.length}</p>
-    <p>Average reader can read in<b> {(text.length/300).toFixed(3)} Minutes</b></p>
+    {text.length>0?<p>Average reader can read in<b> {(text.length/300).toFixed(3)} Minutes</b></p>:"Enter Something to summarise"}
+    
 </div>
 </>
   )
