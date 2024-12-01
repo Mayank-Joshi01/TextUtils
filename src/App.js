@@ -7,6 +7,7 @@ import React,{useState} from 'react';
 import Alert from './Components/Alert';
 
 function App() {
+const [style,Setstyle] = useState([]);
 const [alert , Setalert] = useState(null)
 const [mode,Setmode] = useState('Light')
 
@@ -33,6 +34,15 @@ const toggleModeDark = ()=>{
             document.body.style.backgroundColor ='rgb(33 37 41';
             document.body.style.color ='wihte';
             Showalert("Dark mode is enabled","success");
+
+            Setstyle([{
+              backgroundColor:"black",
+              color:"white"
+            },
+            {
+              backgroundColor:"#353535",
+              color:"white"
+            }])
         }
     }
   return (
@@ -42,8 +52,8 @@ const toggleModeDark = ()=>{
 
      <Routes>
 
-          <Route path="/about" element={<About Mode={mode}/>}/>
-          <Route path="/"element={ <TextForm heading="Enter your text to Analyze" Mode={mode} ShowAlert={Showalert}/>}/>
+          <Route path="/about" element={<About Mode={mode} Style={style}/>}/>
+          <Route path="/"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} ShowAlert={Showalert}/>}/>
 
         </Routes>
         
