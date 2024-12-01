@@ -34,7 +34,20 @@ console.log("Speaking")
   speechSynthesis.speak(utterance);
 
     }
-      
+      const Copy = ()=>{
+  // Get the text field
+  var copyText = document.getElementById("myBox");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  console.log("Copied to Clipboard")
+      }
+
   return (
   <><div className="container">
     <h3 style={{color: props.Mode==='Light'?"black":"white"}}>{props.heading}</h3>
@@ -44,6 +57,7 @@ console.log("Speaking")
 <button className='btn btn-primary my-3 mx-2' onClick={textToLowercase}>LowerCase</button>
 <button className='btn btn-primary my-3 mx-2' onClick={Clear}>Clear</button>
 <button className='btn btn-primary my-3 mx-2' onClick={Speak}>Speak</button>
+<button className='btn btn-primary my-3 mx-2' onClick={Copy}>Copy</button>
 </div>
 
 
