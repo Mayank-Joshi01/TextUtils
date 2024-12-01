@@ -44,8 +44,7 @@ console.log("Speaking")
 
    // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
-
-  console.log("Copied to Clipboard")
+  props.ShowAlert("Copied","success")
       }
 
   return (
