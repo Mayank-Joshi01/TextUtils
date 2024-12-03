@@ -26,6 +26,8 @@ if(mode==='Dark'){
         document.body.style.backgroundColor ='white';
         document.body.style.color ='black';
         Showalert("Light mode is enabled","success");
+        Setstyle([{},
+        {}])
     }
 }
 const toggleModeDark = ()=>{
@@ -47,13 +49,13 @@ const toggleModeDark = ()=>{
     }
   return (
     <> 
-<Navbar title="TextUtils" aboutText="About"  Mode={mode} TML={toggleModeLight} TMD={toggleModeDark} />
+<Navbar title="TextUtils" aboutText="About"  Style={style} Mode={mode} TML={toggleModeLight} TMD={toggleModeDark} />
 <Alert Alert={alert}/>
 
      <Routes>
 
-          <Route path="/about" element={<About Mode={mode} Style={style}/>}/>
-          <Route path="/"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} ShowAlert={Showalert}/>}/>
+          <Route  exaxt path="/TextUtils/About" element={<About Mode={mode} Style={style}/>}/>
+          <Route  exact path="/TextUtils"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} ShowAlert={Showalert}/>}/>
 
         </Routes>
         

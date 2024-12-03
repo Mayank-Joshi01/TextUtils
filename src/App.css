@@ -48,4 +48,13 @@
   .Body{
     height: 100vh;
   }
+
+  .dark-mode{
+    background-color: black;
+    color: white;
+  }
+
+  .placeholderColor::placeholder{
+    color:white;
+  }
   
