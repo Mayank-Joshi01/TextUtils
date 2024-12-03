@@ -55,7 +55,7 @@ const toggleModeDark = ()=>{
      <Routes>
 
           <Route  exaxt path="/TextUtils/About" element={<About Mode={mode} Style={style}/>}/>
-          <Route  exact path="/TextUtils"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} ShowAlert={Showalert}/>}/>
+          <Route  exact path="/TextUtils/"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} ShowAlert={Showalert}/>}/>
 
         </Routes>
         

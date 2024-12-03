@@ -13,7 +13,7 @@ export default function Navbar(props){
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav">
         <li className="nav-item text-center" >
-          <NavLink className={(e)=>{return e.isActive?"nav-link active btn btn-outline-success text-light":"nav-link active"}} style={{color: props.Mode==='Light'?"black":"white"}} aria-current="page" to="/TextUtils" end>Home</NavLink>
+          <NavLink className={(e)=>{return e.isActive?"nav-link active btn btn-outline-success text-light":"nav-link active"}} style={{color: props.Mode==='Light'?"black":"white"}} aria-current="page" to="/TextUtils/" end>Home</NavLink>
         </li>
         <li className="nav-item text-center">
           <NavLink className={(e)=>{return e.isActive?"nav-link active btn btn-outline-success text-light":"nav-link active"}} style={{color: props.Mode==='Light'?"black":"white"}} aria-current="page" to="/Textutils/About" end>About</NavLink>
