@@ -19,7 +19,7 @@ export default function Navbar(props){
           <NavLink className={(e)=>{return e.isActive?"nav-link active btn btn-outline-success text-light":"nav-link active"}} style={{color: props.Mode==='Light'?"black":"white"}} aria-current="page" to="/Textutils/About" end>About</NavLink>
         </li>
         <li className="nav-item dropdown">
-          <button className=" w-100 active nav-link dropdown-toggle" to="" style={{color: props.Mode==='Light'?"black":"white"}} role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button className=" w-100 active nav-link dropdown-toggle" style={{color: props.Mode==='Light'?"black":"white"}} data-bs-toggle="dropdown" aria-expanded="false">
             Theme
           </button>
           <ul className="dropdown-menu" style={{padding:0}} >
