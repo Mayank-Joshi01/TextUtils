@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { NavLink } from "react-router-dom";
 export default function Navbar(props){
-  console.log(props.Mode)
     return(<>
      <h1 className={`text-center bg-light my-0 ${(props.Mode==='Light')?'':'bg-black text-light'}`}>{props.title}</h1>
 <nav className={`navbar navbar-expand-lg ${(props.Mode==='Light')?'':'bg-black text-light'} bg-light `}>
