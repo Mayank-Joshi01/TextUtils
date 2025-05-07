@@ -1,8 +1,12 @@
 import React,{useState} from 'react'
+import { useRef } from 'react';
 
 export default function TextForm(props) {
 
     const [text, setText] = useState("");
+    const [listening, setListening] = useState(false);
+    // const [transcript, setTranscript] = useState("");
+    const transcriptRef = useRef("");
 
     const handelOnChange = (event)=>{
 setText(event.target.value)
@@ -28,12 +32,58 @@ setText(UpperCaseText)
   const voices = speechSynthesis.getVoices();
   utterance.voice = voices[0]; 
   speechSynthesis.speak(utterance);
-
     }
+    
       const Copy = ()=>{
   navigator.clipboard.writeText(text);
   props.ShowAlert("Copied","success")
       }
+
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const recognitionRef = useRef(null);
+
+
+const startListening = () => {
+  if (!SpeechRecognition) {
+    alert("Speech Recognition not supported in this browser.");
+    return;
+  }
+
+  recognitionRef.current = new SpeechRecognition();
+  recognitionRef.current.continuous = true;
+  recognitionRef.current.interimResults = true;
+  recognitionRef.current.lang = 'en-US';
+
+  recognitionRef.current.onresult = (event) => {
+    let interimTranscript = "";
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      const result = event.results[i];
+      if (result.isFinal) {
+        // setTranscript(prev => prev + result[0].transcript + " ");
+        transcriptRef.current += result[0].transcript + " "; 
+        // console.log("transcriptRef:", transcriptRef.current);
+        // console.log("result:", result);
+        // console.log("event:", event);
+        // console.log("result.[0]:", result[0]);
+        setText(prev => prev + result[0].transcript + " ");
+      } else {
+        interimTranscript += result[0].transcript;
+        
+      }
+    }
+  };
+
+  recognitionRef.current.start();
+  setListening(true);
+};
+
+
+const stopListening = () => {
+  recognitionRef.current?.stop();
+  setListening(false);
+};
+
 
   return (
   <><div className="container">
@@ -45,6 +95,9 @@ setText(UpperCaseText)
 <button  disabled={text.length===0} className='btn btn-primary my-3 mx-2' onClick={Clear}>Clear</button>
 <button  disabled={text.split(" ").filter((element)=>{return element.length!==0}).length===0} className='btn btn-primary my-3 mx-2' onClick={Speak}>Speak</button>
 <button  disabled={text.length===0} className='btn btn-primary my-3 mx-2' onClick={Copy}>Copy</button>
+<button  className='btn btn-primary my-3 mx-2' onClick={startListening}>Listen</button>
+<button  disabled={!listening} className='btn btn-primary my-3 mx-2' onClick={stopListening}>Stop Lisening</button>
+{listening && <div className='text-center mt-3 '> <p className='blockquote-footer'> <i>listening.....</i></p></div>}
 </div>
 
 
