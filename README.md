@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# TextUtils
+A simple web application for text manipulation, built to practice JavaScript and React skills.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+TextUtils is a lightweight web app that provides tools for text manipulation, such as converting text to uppercase/lowercase, counting words, and removing extra spaces. This project was created to practice front-end development skills, including JavaScript, React, and CSS.
 
-## Available Scripts
+**Key Features:**
+- Convert text to uppercase or lowercase
+- Count words and characters
+- Remove spaces
+- Copy text to clipboard
+- Convert Speech to text , and support many languages
+- Speaks out the text 
 
-In the project directory, you can run:
+## Demo
+Try the app live: [TextUtils](https://mayank-joshi01.github.io/TextUtils/)
 
-### `npm start`
+## Technologies Used
+- **HTML5**: For the structure of the web app
+- **CSS3**: For styling and responsive design
+- **JavaScript**: For text manipulation logic
+- **React**: For building the user interface
+- **Bootstrap** : For additional styling
+- **FontAwesome** : For icons
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
+To run TextUtils locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mayank-joshi01/TextUtils.git
 
-### `npm test`
+2. Navigate to the project directory:
+    cd TextUtils
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. install dependencies:
+    npm install
 
-### `npm run build`
+4. Start the development server:
+    npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Open http://localhost:3000 in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Future Improvements
+- Add style to Theme toggling button (Dark to light and light to dark)
+- Include more text manipulation features (e.g., text formatting, find and replace)
+- Improve accessibility for screen readers
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
+Feel free to fork this repository and submit pull requests with improvements or bug fixes. Suggestions are welcome!
 
-### `npm run eject`
+## Contact
+Built by Mayank Joshi. Connect with me on:
+- [LinkedIn](https://www.linkedin.com/in/mayank-joshi-027b00325) 
+- [GitHub](https://github.com/mayank-joshi01)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+- Inspired by [any tutorial or course, if applicable]
+- Thanks to [Bootstrap/React docs] for great documentation
