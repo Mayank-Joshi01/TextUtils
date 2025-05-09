@@ -20,6 +20,9 @@ setTimeout(() => {
   Setalert(null)
 }, 1500);
 }
+
+const [lan,Setlan] = useState("en-US");
+
 const toggleModeLight = ()=>{
 if(mode==='Dark'){
         Setmode('Light');
@@ -49,13 +52,13 @@ const toggleModeDark = ()=>{
     }
   return (
     <> 
-<Navbar title="TextUtils" aboutText="About"  Style={style} Mode={mode} TML={toggleModeLight} TMD={toggleModeDark} />
+<Navbar title="TextUtils" aboutText="About"  Style={style} Mode={mode} TML={toggleModeLight} TMD={toggleModeDark} setLan={Setlan} />
 <Alert Alert={alert}/>
 
      <Routes>
 
-          <Route  exaxt path="/TextUtils/About" element={<About Mode={mode} Style={style}/>}/>
-          <Route  exact path="/TextUtils/"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} ShowAlert={Showalert}/>}/>
+          <Route  exaxt path="/TextUtils/About" element={<About Mode={mode} Style={style} />}/>
+          <Route  exact path="/TextUtils/"element={ <TextForm heading="Enter your text to Analyze" Style={style} Mode={mode} lan={lan} ShowAlert={Showalert}/>}/>
 
         </Routes>
         

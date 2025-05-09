@@ -5,6 +5,7 @@ export default function TextForm(props) {
 
     const [text, setText] = useState("");
     const [listening, setListening] = useState(false);
+
     // const [transcript, setTranscript] = useState("");
     const transcriptRef = useRef("");
 
@@ -29,10 +30,20 @@ setText(UpperCaseText)
         
     const Speak = ()=>{
   const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = `${props.lan}`; // Set the correct language
+
   const voices = speechSynthesis.getVoices();
-  utterance.voice = voices[0]; 
+  const Voice = voices.find(voice => voice.lang === `${props.lan}`);
+
+  if (Voice) {
+    utterance.voice = Voice;
+  } else {
+    console.warn("Hindi voice not found, using default voice");
+  }
+
   speechSynthesis.speak(utterance);
     }
+
     
       const Copy = ()=>{
   navigator.clipboard.writeText(text);
@@ -53,9 +64,10 @@ const startListening = () => {
   recognitionRef.current = new SpeechRecognition();
   recognitionRef.current.continuous = true;
   recognitionRef.current.interimResults = true;
-  recognitionRef.current.lang = 'en-US';
+  recognitionRef.current.lang = `${props.lan}`;
 
   recognitionRef.current.onresult = (event) => {
+    console.log("recongnitionRef.current:");
     let interimTranscript = "";
     for (let i = event.resultIndex; i < event.results.length; i++) {
       const result = event.results[i];
@@ -66,6 +78,7 @@ const startListening = () => {
         // console.log("result:", result);
         // console.log("event:", event);
         // console.log("result.[0]:", result[0]);
+        console.log("SetText:  ");
         setText(prev => prev + result[0].transcript + " ");
       } else {
         interimTranscript += result[0].transcript;
@@ -78,6 +91,7 @@ const startListening = () => {
   setListening(true);
 };
 
+console.log("current language:", props.lan);
 
 const stopListening = () => {
   recognitionRef.current?.stop();
